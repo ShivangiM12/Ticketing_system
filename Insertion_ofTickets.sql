@@ -153,6 +153,25 @@ VALUES
     (14, 4, '2023-10-21 23:00:00', 4, 'Status', 'In Progress', 'Closed'),
     (15, 5, '2023-10-22 10:00:00', 5, 'AssigneeID', '2', NULL);
 
+
+INSERT INTO UserRolesToUser (UserID, RoleID)
+VALUES (1, 1), 
+       (2, 2), 
+       (3, 1),
+       (7, 5), 
+       (2, 6), 
+       (3, 8),
+       (10, 13), 
+       (12, 9), 
+       (15, 7),
+       (7, 11), 
+       (5, 12), 
+       (9, 4),
+       (4, 3);
+
+
+
+
 select * from Users
 select * from Comments
 select * from permissions
@@ -162,3 +181,28 @@ select * from TicketHistory
 select * from Tickets
 select * from UserRoles
 
+-- Create the Issues table
+CREATE TABLE Issues (
+    IssueID INT PRIMARY KEY IDENTITY(1, 1),
+    Title VARCHAR(255) NOT NULL,
+    Description TEXT,
+    Status VARCHAR(50) NOT NULL,
+    Priority VARCHAR(50) NOT NULL,
+    Assignee VARCHAR(255),
+    Creator VARCHAR(255) NOT NULL,
+    CreatedAt DATETIME2 DEFAULT GETDATE()
+);
+
+-- Insert sample records into the Issues table
+INSERT INTO Issues (Title, Description, Status, Priority, Assignee, Creator)
+VALUES
+    ('Bug in Login Page', 'Unable to log in after entering credentials.', 'Open', 'High', 'User1', 'User2'),
+    ('Feature Request: Dark Mode', 'Request for a dark mode feature.', 'Open', 'Medium', 'User3', 'User4'),
+    ('Server Maintenance', 'Scheduled server maintenance on Friday.', 'In Progress', 'Low', 'User5', 'User6'),
+    ('Database Performance Issue', 'Slow database response times.', 'Open', 'High', 'User7', 'User8'),
+    ('New Feature: Mobile App', 'Development of a mobile app.', 'In Progress', 'Medium', 'User9', 'User10'),
+    ('UI Design Enhancement', 'Improve the user interface for better user experience.', 'Open', 'Medium', 'User11', 'User12'),
+    ('Critical Bug: Data Loss', 'Data loss occurring during file transfers.', 'Open', 'High', 'User13', 'User14'),
+    ('Feature Request: Notifications', 'Request for notification feature implementation.', 'In Progress', 'Low', 'User15', 'User16'),
+    ('Server Outage', 'Server is down; investigate and resolve the issue.', 'Open', 'High', 'User17', 'User18'),
+    ('Database Upgrade', 'Plan and execute an upgrade of the database system.', 'In Progress', 'Medium', 'User19', 'User20');

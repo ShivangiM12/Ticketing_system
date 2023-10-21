@@ -71,9 +71,16 @@ CREATE TABLE RolePermission (
 
 
 
+-- Drop the table if it exists
+IF OBJECT_ID('UserRolesToUser', 'U') IS NOT NULL
+    DROP TABLE UserRolesToUser;
 
-
-
-
-
+-- Create the UserRolesToUser table with UserRoleToUserID as an identity column
+CREATE TABLE UserRolesToUser (
+    UserRoleToUserID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT,
+    RoleID INT,
+    FOREIGN KEY (UserID) REFERENCES Users (UserID),
+    FOREIGN KEY (RoleID) REFERENCES UserRoles (RoleID)
+);
 
