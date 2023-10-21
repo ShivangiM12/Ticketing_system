@@ -1,0 +1,9 @@
+Basic Features of any ticketing system just like Jira,zoho desk-----------
+User Authentication: Allow users to create accounts and log in with secure authentication methods.
+Ticket Creation: Users should be able to create new tickets, specifying details like the issue type, priority, description, and any relevant attachments.
+Ticket Listing: Provide a list of tickets, with the ability to filter, sort, and search based on various criteria such as status, date, or user.
+Ticket Details: When a user clicks on a ticket, they should be able to view all the details, including ticket history and comments.
+Ticket Assignment: Allow users to assign tickets to specific team members or groups responsible for handling the issue.
+Status Updates: Implement a system to change the status of tickets (e.g., open, in progress, resolved, closed).
+Comments and Notifications: Users should be able to add comments to tickets for communication. Implement email or in-app notifications for updates.
+Dashboard: Provide a dashboard with an overview of ticket statistics, such as the number of open, resolved, and pending tickets.
